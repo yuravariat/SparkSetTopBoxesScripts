@@ -1,0 +1,390 @@
+
+
+====================================[ Chosen ]============================================
+================================================== 1 - 6 ===============================================================
+
+startDate=20150100
+limitDate=20150701
+daysToLearn=30
+minWatchDays=120
+minTotalViews=2000
++--------------------+-------+----------------+------------------+
+|                city|devices|devices_to_learn|devices_to_predict|
++--------------------+-------+----------------+------------------+
+|Charleston-Huntin...|   7658|            7658|              7383|
+|Greenville-N.Bern...|   5052|            5052|              4895|
+|Wilkes Barre-Scranton-Hztn| 4028|        4028|              3993|  + Pennsylvania area
+|            Amarillo|   3937|            3937|              3669|  + Texas area <---
+|Tyler-Longview(Lfkn&Ncgd) 3859|          3859|              3637|  + Texas area
+|         Parkersburg|   3537|            3537|              3434|  + Virginia area <---
+|Little Rock-Pine Bluff| 3522|            3522|              3346|  + Arkansas area <---
+|      Seattle-Tacoma|   3484|            3484|              3397|  + Washington area <---
+|    Dallas-Ft. Worth|   3379|            3379|              3157|  + Texas area
+|Bluefield-Beckley-Oak Hill| 3269|        3269|              3154|  + Virginia area
+========================================================================================================================
+Amarillo,Parkersburg,Little Rock-Pine Bluff,Seattle-Tacoma
+
+
+================================================== 1 - 4 ===============================================================
+startDate=20150100
+limitDate=20150501
+dateLearnFrom=20150331
+minWatchDays=50
+minTotalViews=700
++--------------------+-------+----------------+------------------+
+|                city|devices|devices_to_learn|devices_to_predict|
++--------------------+-------+----------------+------------------+
+|Charleston-Huntin...|   9574|            9574|              9307|
+|Greenville-N.Bern...|   6793|            6793|              6636|
+|            Amarillo|   5645|            5645|              5352|
+|Wilkes Barre-Scra...|   5354|            5354|              5323|
+|Tyler-Longview(Lf...|   5003|            5003|              4841|
+|    Dallas-Ft. Worth|   4484|            4484|              4294|
+|Little Rock-Pine ...|   4445|            4445|              4318|
+|      Seattle-Tacoma|   4411|            4411|              4345|
+|         Parkersburg|   4401|            4401|              4286|
+|Bluefield-Beckley...|   4091|            4091|              3950|
+|             Houston|   3481|            3481|              3401|
+|          Shreveport|   3093|            3093|              2992|
+|   Waco-Temple-Bryan|   3043|            3043|              2976|
+|      Alexandria, LA|   2960|            2960|              2864|
+|             Lubbock|   2901|            2901|              2721|
+|              Eureka|   2873|            2873|              2776|
+|Harrisburg-Lncstr...|   2828|            2828|              2814|
+|  Abilene-Sweetwater|   2763|            2763|              2641|
+|Sioux Falls(Mitch...|   2719|            2719|              2707|
+|              Austin|   2653|            2653|              2530|
+|       Oklahoma City|   2471|            2471|              2370|
+|     Springfield, MO|   2443|            2443|              2390|
+|Raleigh-Durham (F...|   2320|            2320|              2266|
+|          San Angelo|   2274|            2274|              1515|
+|          St. Joseph|   2222|            2222|              2147|
+|Minot-Bsmrck-Dckn...|   2160|            2160|              2132|
+|        Lake Charles|   1925|            1925|              1893|
+|Sacramnto-Stkton-...|   1817|            1817|              1801|
+|    Monroe-El Dorado|   1772|            1772|              1719|
+|      Odessa-Midland|   1740|            1740|              1657|
+|               Tulsa|   1522|            1522|              1460|
+|           Jonesboro|   1344|            1344|              1306|
+|   Fargo-Valley City|   1324|            1324|              1318|
++--------------------+-------+----------------+------------------+
+
+
+startDate=20150100
+limitDate=20150501
+dateLearnFrom=20150331
+minWatchDays=50
+minTotalViews=1000
++--------------------+-------+----------------+------------------+
+|                city|devices|devices_to_learn|devices_to_predict|
++--------------------+-------+----------------+------------------+
+|Charleston-Huntin...|   9112|            9112|              8870|
+|Greenville-N.Bern...|   6296|            6296|              6158|
+|            Amarillo|   5247|            5247|              4986|
+|Wilkes Barre-Scra...|   4882|            4882|              4858|
+|Tyler-Longview(Lf...|   4744|            4744|              4607|
+|Little Rock-Pine ...|   4246|            4246|              4130|
+|    Dallas-Ft. Worth|   4236|            4236|              4067|
+|         Parkersburg|   4215|            4215|              4112|
+|      Seattle-Tacoma|   4146|            4146|              4089|
+|Bluefield-Beckley...|   3927|            3927|              3797|
+|             Houston|   3210|            3210|              3142|
+|          Shreveport|   2912|            2912|              2817|
+|      Alexandria, LA|   2830|            2830|              2742|
+|   Waco-Temple-Bryan|   2808|            2808|              2752|
+|              Eureka|   2695|            2695|              2617|
+|             Lubbock|   2680|            2680|              2523|
+|  Abilene-Sweetwater|   2610|            2610|              2496|
+|Sioux Falls(Mitch...|   2577|            2577|              2565|
+|Harrisburg-Lncstr...|   2506|            2506|              2497|
+|              Austin|   2439|            2439|              2331|
+|       Oklahoma City|   2347|            2347|              2259|
+|     Springfield, MO|   2304|            2304|              2259|
+|Raleigh-Durham (F...|   2199|            2199|              2154|
+|          St. Joseph|   2061|            2061|              1995|
+|Minot-Bsmrck-Dckn...|   2026|            2026|              2000|
+|          San Angelo|   2023|            2023|              1391|
+|        Lake Charles|   1861|            1861|              1829|
+|    Monroe-El Dorado|   1700|            1700|              1652|
+|Sacramnto-Stkton-...|   1674|            1674|              1661|
+|      Odessa-Midland|   1622|            1622|              1553|
+|               Tulsa|   1463|            1463|              1407|
+|           Jonesboro|   1269|            1269|              1236|
+|   Fargo-Valley City|   1251|            1251|              1246|
++--------------------+-------+----------------+------------------+
+
+startDate=20150100
+limitDate=20150501
+dateLearnFrom=20150331
+minWatchDays=80
+minTotalViews=1000
++--------------------+-------+----------------+------------------+
+|                city|devices|devices_to_learn|devices_to_predict|
++--------------------+-------+----------------+------------------+
+|Charleston-Huntin...|   8494|            8494|              8458|
+|Greenville-N.Bern...|   5729|            5729|              5706|
+|Wilkes Barre-Scra...|   4725|            4725|              4717|
+|            Amarillo|   4186|            4186|              4152|
+|Tyler-Longview(Lf...|   4180|            4180|              4164|
+|         Parkersburg|   3960|            3960|              3938|
+|Little Rock-Pine ...|   3813|            3813|              3779|
+|      Seattle-Tacoma|   3780|            3780|              3764|
+|    Dallas-Ft. Worth|   3676|            3676|              3645|
+|Bluefield-Beckley...|   3643|            3643|              3608|
+|             Houston|   2561|            2561|              2548|
+|          Shreveport|   2509|            2509|              2498|
+|   Waco-Temple-Bryan|   2488|            2488|              2483|
+|              Eureka|   2477|            2477|              2466|
+|Harrisburg-Lncstr...|   2439|            2439|              2437|
+|      Alexandria, LA|   2418|            2418|              2405|
+|Sioux Falls(Mitch...|   2326|            2326|              2324|
+|              Austin|   2152|            2152|              2127|
+|  Abilene-Sweetwater|   2117|            2117|              2104|
+|     Springfield, MO|   2089|            2089|              2079|
+|       Oklahoma City|   2035|            2035|              2018|
+|Raleigh-Durham (F...|   2018|            2018|              2015|
+|             Lubbock|   1999|            1999|              1987|
+|          St. Joseph|   1884|            1884|              1863|
+|Minot-Bsmrck-Dckn...|   1825|            1825|              1823|
+|        Lake Charles|   1612|            1612|              1605|
+|Sacramnto-Stkton-...|   1584|            1584|              1577|
+|    Monroe-El Dorado|   1440|            1440|              1433|
+|               Tulsa|   1268|            1268|              1256|
+|      Odessa-Midland|   1250|            1250|              1241|
+|   Fargo-Valley City|   1148|            1148|              1147|
+|           Jonesboro|   1108|            1108|              1106|
+|          San Angelo|   1022|            1022|              1016|
++--------------------+-------+----------------+------------------+
+
+
+================================================== 3 - 7 ===============================================================
+
+startDate=20150231
+limitDate=20150701
+daysToLearn=30
+minWatchDays=50
+minTotalViews=700
++--------------------+-------+----------------+------------------+
+|                city|devices|devices_to_learn|devices_to_predict|
++--------------------+-------+----------------+------------------+
+|Charleston-Huntin...|   9750|            9750|              9475|
+|Greenville-N.Bern...|   6513|            6513|              6359|
+|            Amarillo|   5768|            5768|              5513|
+|Wilkes Barre-Scra...|   5419|            5419|              5401|
+|Tyler-Longview(Lf...|   4914|            4914|              4725|
+|Little Rock-Pine ...|   4482|            4482|              4330|
+|      Seattle-Tacoma|   4464|            4464|              4395|
+|    Dallas-Ft. Worth|   4451|            4451|              4289|
+|         Parkersburg|   4225|            4225|              4136|
+|Bluefield-Beckley...|   3867|            3867|              3761|
+|             Houston|   3710|            3710|              3554|
+|        Lake Charles|   3686|            3686|              3612|
+|   Waco-Temple-Bryan|   3416|            3416|              3253|
+|          Shreveport|   3085|            3085|              2942|
+|             Lubbock|   3073|            3073|              2871|
+|      Alexandria, LA|   2984|            2984|              2868|
+|  Abilene-Sweetwater|   2966|            2966|              2894|
+|Sioux Falls(Mitch...|   2879|            2879|              2856|
+|Harrisburg-Lncstr...|   2857|            2857|              2854|
+|       Oklahoma City|   2846|            2846|              2616|
+|              Eureka|   2726|            2726|              2655|
+|              Austin|   2583|            2583|              2457|
+|Johnstown-Altoona...|   2530|            2530|              2530|
+|           Jonesboro|   2458|            2458|              2416|
+|     Springfield, MO|   2454|            2454|              2374|
+|          San Angelo|   2405|            2405|              2368|
+|Minot-Bsmrck-Dckn...|   2259|            2259|              2249|
+|Raleigh-Durham (F...|   2204|            2204|              2138|
+|          St. Joseph|   2194|            2194|              2139|
+|Sacramnto-Stkton-...|   1869|            1869|              1840|
+|    Monroe-El Dorado|   1808|            1808|              1749|
+|      Odessa-Midland|   1741|            1741|              1629|
+|               Tulsa|   1531|            1531|              1474|
+|   Fargo-Valley City|   1415|            1415|              1406|
+|        Portland, OR|   1031|            1031|              1023|
++--------------------+-------+----------------+------------------+
+
+startDate=20150231
+limitDate=20150701
+daysToLearn=30
+minWatchDays=80
+minTotalViews=1000
++--------------------+-------+----------------+------------------+
+|                city|devices|devices_to_learn|devices_to_predict|
++--------------------+-------+----------------+------------------+
+|Charleston-Huntin...|   8421|            8421|              8370|
+|Greenville-N.Bern...|   5439|            5439|              5411|
+|Wilkes Barre-Scra...|   4624|            4624|              4620|
+|            Amarillo|   4070|            4070|              4012|
+|Tyler-Longview(Lf...|   4043|            4043|              4005|
+|Little Rock-Pine ...|   3744|            3744|              3713|
+|      Seattle-Tacoma|   3723|            3723|              3708|
+|         Parkersburg|   3719|            3719|              3695|
+|    Dallas-Ft. Worth|   3622|            3622|              3587|
+|Bluefield-Beckley...|   3400|            3400|              3389|
+|             Houston|   2824|            2824|              2794|
+|        Lake Charles|   2601|            2601|              2592|
+|   Waco-Temple-Bryan|   2542|            2542|              2508|
+|          Shreveport|   2480|            2480|              2455|
+|Sioux Falls(Mitch...|   2413|            2413|              2408|
+|Harrisburg-Lncstr...|   2405|            2405|              2404|
+|              Eureka|   2382|            2382|              2363|
+|      Alexandria, LA|   2376|            2376|              2350|
+|  Abilene-Sweetwater|   2206|            2206|              2195|
+|             Lubbock|   2117|            2117|              2090|
+|     Springfield, MO|   2068|            2068|              2059|
+|              Austin|   2053|            2053|              2031|
+|       Oklahoma City|   2031|            2031|              1959|
+|Raleigh-Durham (F...|   1925|            1925|              1911|
+|Minot-Bsmrck-Dckn...|   1864|            1864|              1864|
+|          St. Joseph|   1845|            1845|              1833|
+|           Jonesboro|   1798|            1798|              1790|
+|Sacramnto-Stkton-...|   1585|            1585|              1577|
+|    Monroe-El Dorado|   1466|            1466|              1455|
+|               Tulsa|   1267|            1267|              1257|
+|      Odessa-Midland|   1183|            1183|              1166|
+|   Fargo-Valley City|   1170|            1170|              1168|
+|          San Angelo|   1096|            1096|              1090|
++--------------------+-------+----------------+------------------+
+
+================================================== 7 - 11 ==============================================================
+
+startDate=20150631
+limitDate=20151201
+daysToLearn=30
+minWatchDays=50
+minTotalViews=700
++--------------------+-------+----------------+------------------+
+|                city|devices|devices_to_learn|devices_to_predict|
++--------------------+-------+----------------+------------------+
+|Charleston-Huntin...|   9587|            9587|              8942|
+|Greenville-N.Bern...|   6634|            6634|              6195|
+|Wilkes Barre-Scra...|   6046|            6046|              5601|
+|            Amarillo|   5615|            5615|              4489|
+|      Seattle-Tacoma|   4880|            4880|              4536|
+|Tyler-Longview(Lf...|   4788|            4788|              4244|
+|Little Rock-Pine ...|   4340|            4340|              3837|
+|    Dallas-Ft. Worth|   4267|            4267|              3645|
+|         Parkersburg|   4130|            4130|              3903|
+|        Lake Charles|   4016|            4016|              3541|
+|Bluefield-Beckley...|   3757|            3757|              3468|
+|   Waco-Temple-Bryan|   3508|            3508|              3188|
+|             Houston|   3464|            3464|              2852|
+|Sioux Falls(Mitch...|   3257|            3257|              3018|
+|Johnstown-Altoona...|   3218|            3218|              1373|
+|Harrisburg-Lncstr...|   3181|            3181|              3076|
+|  Abilene-Sweetwater|   2958|            2958|              2522|
+|          Shreveport|   2948|            2948|              2579|
+|      Alexandria, LA|   2918|            2918|              2617|
+|       Oklahoma City|   2868|            2868|              2512|
+|             Lubbock|   2829|            2829|              2267|
+|              Eureka|   2695|            2695|              2530|
+|          San Angelo|   2615|            2615|              2290|
+|Minot-Bsmrck-Dckn...|   2556|            2556|              2333|
+|              Austin|   2511|            2511|              2206|
+|           Jonesboro|   2497|            2497|              2230|
+|     Springfield, MO|   2424|            2424|              2224|
+|Raleigh-Durham (F...|   2212|            2212|              2068|
+|          St. Joseph|   2165|            2165|              1936|
+|Sacramnto-Stkton-...|   2070|            2070|              1884|
+|          Pittsburgh|   1968|            1968|              1809|
+|    Monroe-El Dorado|   1779|            1779|              1612|
+|   Fargo-Valley City|   1688|            1688|              1603|
+|      Odessa-Midland|   1575|            1575|              1236|
+|            Bend, OR|   1526|            1526|              1250|
+|               Tulsa|   1462|            1462|              1302|
+|        Portland, OR|   1185|            1185|              1078|
++--------------------+-------+----------------+------------------+
+
+
+startDate=20150631
+limitDate=20151201
+daysToLearn=30
+minWatchDays=80
+minTotalViews=1000
++--------------------+-------+----------------+------------------+
+|                city|devices|devices_to_learn|devices_to_predict|
++--------------------+-------+----------------+------------------+
+|Charleston-Huntin...|   8770|            8770|              8398|
+|Greenville-N.Bern...|   5932|            5932|              5703|
+|Wilkes Barre-Scra...|   5358|            5358|              5093|
+|            Amarillo|   4425|            4425|              3893|
+|      Seattle-Tacoma|   4389|            4389|              4182|
+|Tyler-Longview(Lf...|   4191|            4191|              3895|
+|Little Rock-Pine ...|   3892|            3892|              3586|
+|         Parkersburg|   3786|            3786|              3656|
+|    Dallas-Ft. Worth|   3680|            3680|              3320|
+|        Lake Charles|   3566|            3566|              3268|
+|Bluefield-Beckley...|   3427|            3427|              3273|
+|   Waco-Temple-Bryan|   2977|            2977|              2816|
+|Sioux Falls(Mitch...|   2944|            2944|              2776|
+|             Houston|   2852|            2852|              2506|
+|Johnstown-Altoona...|   2846|            2846|              1292|
+|Harrisburg-Lncstr...|   2829|            2829|              2761|
+|      Alexandria, LA|   2547|            2547|              2388|
+|          Shreveport|   2545|            2545|              2358|
+|  Abilene-Sweetwater|   2540|            2540|              2331|
+|              Eureka|   2443|            2443|              2356|
+|       Oklahoma City|   2389|            2389|              2221|
+|Minot-Bsmrck-Dckn...|   2261|            2261|              2125|
+|          San Angelo|   2233|            2233|              2057|
+|           Jonesboro|   2218|            2218|              2074|
+|     Springfield, MO|   2204|            2204|              2099|
+|              Austin|   2136|            2136|              1987|
+|             Lubbock|   2032|            2032|              1839|
+|Raleigh-Durham (F...|   2024|            2024|              1940|
+|          St. Joseph|   1954|            1954|              1816|
+|Sacramnto-Stkton-...|   1844|            1844|              1716|
+|    Monroe-El Dorado|   1562|            1562|              1476|
+|   Fargo-Valley City|   1514|            1514|              1463|
+|          Pittsburgh|   1376|            1376|              1256|
+|               Tulsa|   1332|            1332|              1233|
+|            Bend, OR|   1325|            1325|              1160|
+|      Odessa-Midland|   1145|            1145|              1011|
+|        Portland, OR|   1069|            1069|              1004|
++--------------------+-------+----------------+------------------+
+
+================================================== 1 - 6 ===============================================================
+
+startDate=20150100
+limitDate=20150701
+daysToLearn=30
+minWatchDays=120
+minTotalViews=2000
++--------------------+-------+----------------+------------------+
+|                city|devices|devices_to_learn|devices_to_predict|
++--------------------+-------+----------------+------------------+
+|Charleston-Huntin...|   7658|            7658|              7383|
+|Greenville-N.Bern...|   5052|            5052|              4895|
+|Wilkes Barre-Scranton-Hztn| 4028|        4028|              3993|  + Pennsylvania area
+|            Amarillo|   3937|            3937|              3669|  + Texas area
+|Tyler-Longview(Lfkn&Ncgd) 3859|          3859|              3637|  + Texas area
+|         Parkersburg|   3537|            3537|              3434|  + Virginia area
+|Little Rock-Pine Bluff| 3522|            3522|              3346|  + Arkansas area
+|      Seattle-Tacoma|   3484|            3484|              3397|  + Washington area
+|    Dallas-Ft. Worth|   3379|            3379|              3157|  + Texas area
+|Bluefield-Beckley-Oak Hill| 3269|        3269|              3154|  + Virginia area
+|             Houston|   2419|            2419|              2266|
+|          Shreveport|   2322|            2322|              2177|
+|      Alexandria, LA|   2247|            2247|              2125|
+|              Eureka|   2202|            2202|              2143|
+|   Waco-Temple-Bryan|   2198|            2198|              1998|
+|Sioux Falls(Mitch...|   2197|            2197|              2165|
+|  Abilene-Sweetwater|   1995|            1995|              1914|
+|Harrisburg-Lncstr...|   1964|            1964|              1952|
+|     Springfield, MO|   1952|            1952|              1870|
+|              Austin|   1897|            1897|              1792|
+|             Lubbock|   1862|            1862|              1721|
+|Raleigh-Durham (F...|   1809|            1809|              1748|
+|       Oklahoma City|   1802|            1802|              1590|
+|          St. Joseph|   1712|            1712|              1646|
+|Minot-Bsmrck-Dckn...|   1684|            1684|              1652|
+|        Lake Charles|   1535|            1535|              1469|
+|          San Angelo|   1436|            1436|              1394|
+|Sacramnto-Stkton-...|   1427|            1427|              1377|
+|    Monroe-El Dorado|   1386|            1386|              1322|
+|               Tulsa|   1205|            1205|              1138|
+|      Odessa-Midland|   1103|            1103|              1004|
+|   Fargo-Valley City|   1058|            1058|              1046|
++--------------------+-------+----------------+------------------+
+

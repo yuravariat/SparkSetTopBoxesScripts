@@ -1,0 +1,148 @@
+
+General:
+
+    1. Translated programs for specific period [TranslatedPrograms]
+    2. Statistic, what programs where watched most [ProgramsRates]
+
+Programs matrix creation:
+
+
+    1. Flat xml data [refxml] of devices per day to csv format [refcsv]. [C# function FlatRefXMLAll() Data parser project]
+        [input]=refcsv output=refcsv
+
+    2. Create unique devices data general and unique devices with one device per household. [Create_Unique_Devices_List]
+            [input]=refcsv [output]=y_devices/unique_devices_one_dev_in_house
+
+    3. Create data of views(with programs durations) and logs(only OFF events). [CreateLogsAndViewsUnion]
+        [input]=rpt_programs,rpt_prog_view,rawxml [output]=y_views_logs_union
+
+    4. Create data of all views with their real watch durations. [CreateViewsWithDurations]
+         [input]=y_views_logs_union [output]=y_views_with_durations
+
+    5. Create devices appearances table. Each device and all dates where it appears.
+        Not including MP_MISSINGPROGRAM, DVRPGMKEY codes and views less then 5 minutes. [Create_Devices_Appearances_By_Views]
+        [input]=refcsv [output]=devices\devices_appearances_by_views
+
+    6. Create programs groups. all programs translated in first 5 months grouped by name [ProgramGroups]
+       (same program can be translated with several ids)
+       [input]=rpt_programs [output]=y_programs/programs_groups
+
+    7. Check most effective time period for learning and prediction with [Create_Devices_Appearances_By_Views_Check]
+        [input]=devices\devices_appearances_by_views
+
+    8. Save devices for each city to optimize matrix creation [Select_Devices_ByConstrains]
+
+    9. Create Matrix with [CreateProgramsVectors]
+
+    10. Runing K-Means algorithm for range of k. [KMeansRun].
+       Original vectors with cluster classifications stored in [output]/k_#/prediction
+       [input]=y_for_clustering/5_months/+city_name+_vect
+       [output]=y_clustering_results/5_months/city_name+_vect
+
+    11. Find time differences with [Find_Time_Differences] for each city/area.
+       Translation time zone not equal to view watch time zone
+
+    12. Run prediction [RunProgPredict]
+        [input]=y_clustering_results/5_months/city_name+_vect
+        [output]=y_predictions/5_months/city_name+_vect
+
+    13. Run Prediction statistics [ProgPredictResultsShow]
+
+
+
+Program prediction
+
+    1. Run ver each views of each device. On each device view program will be predicted with currently translate programs
+        rated by means vector of cluster that device is belong to. [RunProgPredict]
+        [input]=clustered data, transalted programs, devices with views. [output]=???
+
+
+Run command:  spark-shell --driver-memory 10G --executor-memory 18G -i test.scala
+
+
+Programs matrix creation old:
+
+
+    1. Flat xml data [refxml] of devices per day to csv format [refcsv]. [C# function FlatRefXMLAll() Data parser project]
+        [input]=refcsv output=refcsv
+
+    2. Create devices appearances table. Each device and all dates where it appears. [Create_Devices_Appearances_By_Dates]
+        [input]=refcsv [output]=devices\devices_appearances
+        * Show devices counts with full history for a year per city [Devices_With_appearances_By_Cities]
+        [input]=devices\devices_appearances
+
+    3. Save devices with history with at least 120 first history days per cities (One device per houseHold).
+        [Devices_With_appearances_Save_By_City]
+        [input]=devices\devices_appearances [output]=devices/devices_120_hist_+city_name
+
+    4. Collect logs and views from selected cities and place them in one folder order by datetime [Devices_Watch_History_Collect]
+        [input]=devices/devices_120_hist_+city_name [output]=devices_views/devices_120_hist_+city_name+_ordered
+
+    5. Calculate precise views duration with logs and programs translations data. [Calculate_durations]
+        Then place them in other folder.
+        [input]=devices_views/devices_120_hist_+city_name+_ordered [output]=devices_views/devices_120_hist_+city_name+_ord_dur
+
+    6. Find time differences with [Find_Time_Differences]. Translation time zone not equal to view watch time zone
+
+    7. Create programs groups. all programs translated in first 5 months grouped by name
+        (same program can be translated with several ids)
+        [input]=rpt_programs [output]=y_programs/programs_groups
+
+    8. Create devices x programs matrix. Each device number of views for each program.
+        Don't take account view with duration less then 5 minutes, strange programs(list in code)
+        and devices with small amount of views(not much but still exist despite of appearances table)
+        Final step normalization. [CreateProgramsVectors]
+        [input]=y_programs/programs_groups | devices_views/devices_120_hist_+city_name+_ord_dur
+        [output]=y_for_clustering/devices_120_hist_+city_name+_progs_vect
+
+Clustering
+
+    1. Runing K-Means algorithm for range of k. [KMeansRun].
+        Original vectors with cluster classifications stored in [output]/k_#/prediction
+        [input]=y_for_clustering/devices_120_hist_+city_name+_progs_vect
+        [output]=y_for_clustering/devices_120_hist_+city_name+_progs_vect+_results
+
+
+
+Holidays 2015 (From http://www.ca3.uscourts.gov/2015-federal-holidays)
+1/1/2015 - New Year
+19/1/2015 - Martin Luther King Day
+16/2/2015 - Presidents day
+25/5/2015 - Memorial day
+3/7/2015-4/7/2015 - Independence day
+7/9/2015 - Labor day
+12/10/2015 - Columbus day
+11/11/2015 - Veterans day
+26/11/2015 - Thanksgiving day
+
+Special events (From wikipedia, https://en.wikipedia.org/wiki/2015_in_the_United_States)
+14/1/2015 - * A collision between a train and a prison transport bus near Penwell, Texas.
+26-27/1/2015 - * A blizzard hits the Northeast shutting down major cities including New York City and Boston, with up to 60 million people affected.
+3/2/2015 - * A collision between a commuter train and a passenger vehicle kills six in Valhalla, New York.
+10/2/2015 - * Chapel Hill shooting. Craig Stephen Hicks killed a Muslim family of three in Chapel Hill, North Carolina.
+26/2/2015 - A gunman kills seven people then himself in a series of shootings in Tyrone, Missouri.
+4/4/2015 -  Walter Scott, an unarmed man, is shot and killed by a police officer in North Charleston.
+25/4/2015 - 3/5/2015 - * Protests in Baltimore, Maryland from Baltimore City Hall to the Inner Harbor against the April 19 death of Freddie Gray in police custody soon turn violent, with extensive property damage
+3/5/2015 - * Two suspected Islamist gunmen attack the Curtis Culwell Center in the city of Garland, Texas.
+12/5/2015 - An Amtrak train derails in the Philadelphia neighborhood for Port Richmond, causing cars to roll over and killing at least 8 people and injuring over 200.
+17/5/2015 - A shootout erupts between rival biker gangs in a Twin Peaks restaurant in Waco, Texas, leaving nine dead.
+20/5/2015 - David Letterman broadcasts the last episode of his 22-year run as host of The Late Show on CBS, drawing a record audience.
+23-25/5/2015 - * Historic flash flooding levels occur in Texas and Oklahoma in a prolonged outbreak of floods and tornadoes, leaving at least 17 people dead and at least 40 others missing.
+[3,6,8,10,13,15]/6/2015 - NHL, 2015 Stanley Cup Finals.
+17/6/2015 - * Nine people are shot and killed during a prayer service at Emanuel African Methodist Episcopal Church, a historically black church
+5/7/2015 -  2015 FIFA Women's World Cup
+16/7/2015 - A gunman attacks two military installations in Chattanooga, Tennessee. Five U.S. Marines are killed and two others are injured.
+17-21/7/2015 - The Cajon Pass wildfire spreads across 4,250 acres (1,720 ha) in the Mojave Desert near the towns of Victorville and Hesperia, north of San Bernardino and south of Bakersfield in the state of California
+23/7/2015 - A gunman opens fire at a movie theater in Lafayette, Louisiana, killing two people and injuring nine others before committing suicide.
+26/8/2015 - News reporter Alison Parker and camera operator Adam Ward are shot and killed on live television during an interview in Moneta, Virginia.
+12-13/9/2015 - The Valley wildfire claims at least three lives in Lake County, California with thousands of people forced to evacuate.
+14/9/2015 - 2015 Utah floods, by Hurricane Linda.
+20/9/2015 - The 67th Primetime Emmy Awards are held at the Microsoft Theater in Los Angeles, California.
+1/10/2015 - 26-year-old Christopher Harper-Mercer opens fire at Umpqua Community College in Roseburg, Oregon. killing 9 people and injuring 9 others.
+1/10/2015 - The SS El Faro, a cargo ship, sinks off the Bahamas after leaving Jacksonville, Florida two days prior, headed to Puerto Rico.
+25/10/2015 - A drunk driver plows into the Oklahoma State Homecoming parade in Stillwater, Oklahoma, killing four people and injuring 34.
+27/10/2015-1/11/2015 - World Series, 111th edition of Major League Baseball's championship series.
+22/11/2015 - The 2015 New Orleans shooting took place at Bunny Friend playground in the Ninth Ward of New Orleans, Louisiana
+27/11/2015 - A gunman opens fire at a Planned Parenthood clinic in Colorado Springs, Colorado, killing 3, including a police officer, and injuring 9.
+2/12/2015 - 2015 San Bernardino attack: 14 people are killed in a terrorist attack at a facility for the mentally disabled in San Bernardino, California.
+15/12/2015 - 2015 Los Angeles Unified School District closure: The Los Angeles Unified School District received a credible terrorism threat causing the temporary closure of all Los Angeles Unified Schools.
