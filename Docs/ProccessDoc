@@ -48,53 +48,6 @@ Programs matrix creation:
 
     13. Run Prediction statistics [ProgPredictResultsShow]
 
-
-
-Program prediction
-
-    1. Run ver each views of each device. On each device view program will be predicted with currently translate programs
-        rated by means vector of cluster that device is belong to. [RunProgPredict]
-        [input]=clustered data, transalted programs, devices with views. [output]=???
-
-
-Run command:  spark-shell --driver-memory 10G --executor-memory 18G -i test.scala
-
-
-Programs matrix creation old:
-
-
-    1. Flat xml data [refxml] of devices per day to csv format [refcsv]. [C# function FlatRefXMLAll() Data parser project]
-        [input]=refcsv output=refcsv
-
-    2. Create devices appearances table. Each device and all dates where it appears. [Create_Devices_Appearances_By_Dates]
-        [input]=refcsv [output]=devices\devices_appearances
-        * Show devices counts with full history for a year per city [Devices_With_appearances_By_Cities]
-        [input]=devices\devices_appearances
-
-    3. Save devices with history with at least 120 first history days per cities (One device per houseHold).
-        [Devices_With_appearances_Save_By_City]
-        [input]=devices\devices_appearances [output]=devices/devices_120_hist_+city_name
-
-    4. Collect logs and views from selected cities and place them in one folder order by datetime [Devices_Watch_History_Collect]
-        [input]=devices/devices_120_hist_+city_name [output]=devices_views/devices_120_hist_+city_name+_ordered
-
-    5. Calculate precise views duration with logs and programs translations data. [Calculate_durations]
-        Then place them in other folder.
-        [input]=devices_views/devices_120_hist_+city_name+_ordered [output]=devices_views/devices_120_hist_+city_name+_ord_dur
-
-    6. Find time differences with [Find_Time_Differences]. Translation time zone not equal to view watch time zone
-
-    7. Create programs groups. all programs translated in first 5 months grouped by name
-        (same program can be translated with several ids)
-        [input]=rpt_programs [output]=y_programs/programs_groups
-
-    8. Create devices x programs matrix. Each device number of views for each program.
-        Don't take account view with duration less then 5 minutes, strange programs(list in code)
-        and devices with small amount of views(not much but still exist despite of appearances table)
-        Final step normalization. [CreateProgramsVectors]
-        [input]=y_programs/programs_groups | devices_views/devices_120_hist_+city_name+_ord_dur
-        [output]=y_for_clustering/devices_120_hist_+city_name+_progs_vect
-
 Clustering
 
     1. Runing K-Means algorithm for range of k. [KMeansRun].
@@ -102,7 +55,11 @@ Clustering
         [input]=y_for_clustering/devices_120_hist_+city_name+_progs_vect
         [output]=y_for_clustering/devices_120_hist_+city_name+_progs_vect+_results
 
+Program prediction
 
+    1. Run ver each views of each device. On each device view program will be predicted with currently translate programs
+        rated by means vector of cluster that device is belong to. [RunProgPredict]
+        [input]=clustered data, transalted programs, devices with views. [output]=???
 
 Holidays 2015 (From http://www.ca3.uscourts.gov/2015-federal-holidays)
 1/1/2015 - New Year
