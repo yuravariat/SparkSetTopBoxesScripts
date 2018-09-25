@@ -42,7 +42,7 @@ Programs matrix creation:
     11. Find time differences with [Find_Time_Differences] for each city/area.
        Translation time zone not equal to view watch time zone
 
-    12. Run prediction [RunProgPredict]
+    12. Run prediction [RunProgPredictRaw]
         [input]=y_clustering_results/5_months/city_name+_vect
         [output]=y_predictions/5_months/city_name+_vect
 
